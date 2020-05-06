@@ -15,6 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class PostsRepositoryTest {
 
+
     @Autowired
     PostsRepository postsRepository;
 
@@ -24,15 +25,15 @@ public class PostsRepositoryTest {
     }
 
     @Test
-    public void testSaveAndLoadPosts() {
+    public void testPostsSaveAndLoad() {
         // given
-        String title = "테스트 게시글";
-        String content = "테스트 본문";
+        String title = "Example title";
+        String content = "Example content";
 
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
-                .author("jud210@gmail.com")
+                .author("example@gmail.com")
                 .build());
 
         // when
