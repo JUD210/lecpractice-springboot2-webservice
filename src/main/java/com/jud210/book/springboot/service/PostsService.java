@@ -33,6 +33,8 @@ public class PostsService {
     //
     // 즉, Entity 객체의 값만 변경하면 별도로 Update Query를 날릴 필요가 없음.
     // 이 개념을 Dirty Checking 이라고 함.
+    //
+    // 참고하면 좋은 자료: https://gmlwjd9405.github.io/2019/02/01/orm.html
     public Long update(Long id, PostsUpdateRequestDto requestDto) {
         Posts posts = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
